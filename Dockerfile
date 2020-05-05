@@ -6,10 +6,10 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
       libicu-dev \
       libpq-dev \
       libmcrypt-dev \
-      default-libmysqlclient-dev default-mysql-client \
+      default-libmysqlclient-dev \
+      default-mysql-client \
       ruby-full \
       nodejs \
-      npm \
       ssh \
     && rm -r /var/lib/apt/lists/* \
     && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
