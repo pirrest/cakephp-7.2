@@ -1,7 +1,7 @@
 FROM php:7.2-apache
 
 # Install PHP extensions
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && apt-get update && apt-get install -y \
       libicu-dev \
       libpq-dev \
@@ -9,6 +9,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
       default-libmysqlclient-dev default-mysql-client \
       ruby-full \
       nodejs \
+      npm \
       ssh \
     && rm -r /var/lib/apt/lists/* \
     && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
